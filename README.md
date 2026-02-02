@@ -1,4 +1,4 @@
-# Nitro Docker
+# Nitro Docker (2026 !)
 Nitro docker is a quick-to-setup docker dev environment. It can be run on Windows, Linux or OSX just with a few commands
 
 # Installation
@@ -10,7 +10,9 @@ Nitro docker is a quick-to-setup docker dev environment. It can be run on Window
 - `just start-all`
 - Wait 5/10 minutes (it's important)
 - Once nitro accessible on [http://127.0.0.1:1080?sso=123](http://127.0.0.1:1080?sso=123)
-- you can extract all assets easily with the command `just extract-nitro-assets`
+- You can extract all assets easily with the command `just extract-nitro-assets`
+
+‼️ If you have have the 20% error, look at the console, maybe it miss the "ExternalText". Just extract assets: previous command ⬆️
 
 ## More commands
 - `just restart-arcturus`: restart arcturus emulator
