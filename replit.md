@@ -5,12 +5,23 @@ This is a Habbo Hotel emulator development environment called "Nitro Docker". It
 
 1. **nitro-react** (frontend) - React-based Habbo client (Nitro 2.2.0), served on port 5000
 2. **Arcturus Emulator** (backend, not running in Replit) - Java-based hotel emulator (WebSocket on port 2096)
-3. **MySQL** (database, not running in Replit) - MariaDB for game data
+3. **PostgreSQL Database** - Replit native database (converted from MySQL dumps)
 4. **Asset servers** (not running in Replit) - HTTP servers for game assets/SWF files on ports 8080 and 8081
 
 ## What's Running in Replit
-Only the **nitro-react frontend** is set up to run in Replit (the other components require Docker).
+- ✅ **nitro-react frontend** - React app running on port 5000
+- ✅ **PostgreSQL Database** - Arcturus database schema loaded (converted from MySQL)
+- ❌ **Arcturus emulator** - Java backend (requires Docker)
+- ❌ **Asset servers** - Would require Node.js http-server setup
 
+## Database
+- **Status**: PostgreSQL database created and populated
+- **Schema**: Arcturus 3.0.0-stable base database + migration to 3.5.0
+- **Connection**: Available via `DATABASE_URL` environment variable
+- **Conversion**: MySQL dumps converted to PostgreSQL format using sed
+- **Tables**: ~60+ tables for users, items, furniture, rooms, bans, achievements, etc.
+
+## Frontend Setup
 - Workflow: "Start application" → `cd nitro/nitro-react && npm run start`
 - Port: 5000
 - The frontend connects to backend services via config in `nitro/nitro-react/public/`
