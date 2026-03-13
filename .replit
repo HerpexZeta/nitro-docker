@@ -46,6 +46,10 @@ args = "just extract-nitro-assets"
 outputType = "console"
 
 [[ports]]
+localPort = 3000
+externalPort = 3001
+
+[[ports]]
 localPort = 5000
 externalPort = 80
 
@@ -56,6 +60,10 @@ externalPort = 8080
 [[ports]]
 localPort = 8081
 externalPort = 8081
+
+[[ports]]
+localPort = 8099
+externalPort = 8099
 
 [deployment]
 deploymentTarget = "static"
