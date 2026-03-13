@@ -69,3 +69,6 @@ externalPort = 8099
 deploymentTarget = "static"
 build = ["bash", "-c", "cd nitro/nitro-react && npm run build"]
 publicDir = "nitro/nitro-react/dist"
+
+[objectStorage]
+defaultBucketID = "replit-objstore-eb79d5fe-221d-45f9-ba4b-895be865c042"
