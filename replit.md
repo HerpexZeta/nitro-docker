@@ -9,10 +9,11 @@ This is a Habbo Hotel emulator development environment called "Nitro Docker". It
 4. **Asset servers** (not running in Replit) - HTTP servers for game assets/SWF files on ports 8080 and 8081
 
 ## What's Running in Replit
-- ✅ **nitro-react frontend** - React app running on port 5000
+- ✅ **nitro-react frontend** - React app running on port 5000 (`just start-all`)
+- ✅ **SWF HTTP server** - Serving raw SWF/image files on port 8081 (`just start-all`)
+- ✅ **Assets HTTP server** - Serving converted .nitro assets on port 8080 (`just start-all`)
 - ✅ **PostgreSQL Database** - Arcturus database schema loaded (converted from MySQL)
-- ❌ **Arcturus emulator** - Java backend (requires Docker)
-- ❌ **Asset servers** - Would require Node.js http-server setup
+- ❌ **Arcturus emulator** - Java backend (requires Docker + Maven)
 
 ## Database
 - **Status**: PostgreSQL database created and populated
@@ -50,6 +51,12 @@ In the full Docker environment, all services run together:
 - Nitro assets server on port 8080
 - Nitro SWF server on port 8081
 - Nitro dev server on port 1080 (mapped from 5154)
+
+## Just Commands (Replit-adapted)
+- `just start-all` - Start SWF server (8081), assets server (8080), and Nitro React (5000)
+- `just extract-nitro-assets` - Convert SWF files to .nitro format (long-running, ~30+ min)
+- `just restart-nitro` - Copy config and restart the Nitro dev server
+- `just stop-all` - Kill all background servers
 
 ## Key Configuration
 - Backend WebSocket: `ws://127.0.0.1:2096` (configurable in renderer-config.json)
